@@ -11,7 +11,7 @@ export class SpotifyService{
 	}
 
 	cariMusic(str:string, type="artist"){
-		this.cariUrl = 'https://api.spotify.com/v1/cari?query='+str+'$offset=0&limit=20&type='+type+'&market=US';
+		this.cariUrl = 'https://api.spotify.com/v1/search?query='+str+'$offset=0&limit=20&type='+type+'&market=US';
 		return this._http.get(this.cariUrl)
 		.map(res => res.json());
 	}
